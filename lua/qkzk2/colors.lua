@@ -35,11 +35,11 @@ function M.setup(config)
     magenta2 = "#ff007c",
     purple = "#9d7cd8",
     orange = "#ff9e64",
-    yellow = "#e0af68",
-    green = "#9ece6a",
+    yellow = "#e7cb93",
+    green = "#a3be8c",
     green1 = "#73daca",
     green2 = "#41a6b5",
-    teal = "#1abc9c",
+    teal = "#1abb9b",
     red = "#f7768e",
     red1 = "#db4b4b",
     git = { change = "#6183bb", add = "#449dab", delete = "#914c54", conflict = "#bb7a61" },
@@ -97,4 +97,3 @@ function M.setup(config)
 end
 
 return M
-
