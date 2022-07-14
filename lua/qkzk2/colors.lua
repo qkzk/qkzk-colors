@@ -15,7 +15,7 @@ function M.setup(config)
     none = "NONE",
     bg_dark = "#1f2335",
     bg = "#3b4048",
-    bg_highlight = "#292e42",
+    bg_highlight = "#2c323c",
     terminal_black = "#414868",
     fg = "#c8ced9",
     fg_dark = "#a9b1d6",
