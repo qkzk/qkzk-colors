@@ -261,6 +261,8 @@ function M.setup(config)
     -- TSLiteral           = { };    -- Literal text.
     -- TSURI               = { };    -- Any URI like a link or email.
 
+    TSStrong = { fg = c.yellow },
+    TSEmphasis = { fg = c.teal },
     -- Lua
     -- luaTSProperty = { fg = c.red }, -- Same as `TSField`.
 
