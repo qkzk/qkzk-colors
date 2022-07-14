@@ -31,7 +31,7 @@ function M.setup(config)
     blue5 = "#89ddff",
     blue6 = "#B4F9F8",
     blue7 = "#394b70",
-    magenta = "#bb9af7",
+    magenta = "#c586c0",
     magenta2 = "#ff007c",
     purple = "#9d7cd8",
     orange = "#ff9e64",

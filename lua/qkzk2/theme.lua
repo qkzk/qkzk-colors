@@ -64,11 +64,11 @@ function M.setup(config)
     SpellCap = { sp = c.warning, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
     SpellLocal = { sp = c.info, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     SpellRare = { sp = c.hint, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-    StatusLine = { fg = c.fg_sidebar, bg = c.bg_statusline }, -- status line of current window
-    StatusLineNC = { fg = c.fg_gutter, bg = c.bg_statusline }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-    TabLine = { bg = c.bg_statusline, fg = c.fg_gutter }, -- tab pages line, not active tab page label
-    TabLineFill = { bg = c.black }, -- tab pages line, where there are no labels
-    TabLineSel = { fg = c.black, bg = c.blue }, -- tab pages line, active tab page label
+    StatusLine = { fg = c.fg_sidebar, bg = config.transparent and c.none or c.bg }, -- status line of current window
+    StatusLineNC = { fg = c.fg_gutter, bg = config.transparent and c.none or c.bg }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+    TabLine = { bg = config.transparent and c.none or c.bg, fg = c.fg_gutter }, -- tab pages line, not active tab page label
+    TabLineFill = { bg = config.transparent and c.none or c.bg }, -- tab pages line, where there are no labels
+    TabLineSel = { fg = config.transparent and c.none or c.bg, bg = c.blue }, -- tab pages line, active tab page label
     Title = { fg = c.blue, style = "bold" }, -- titles for output from ":set all", ":autocmd" etc.
     Visual = { bg = c.bg_visual }, -- Visual mode selection
     VisualNOS = { bg = c.bg_visual }, -- Visual mode selection when vim is "Not Owning the Selection".
@@ -96,8 +96,8 @@ function M.setup(config)
     -- Conditional   = { }, --  if, then, else, endif, switch, etc.
     -- Repeat        = { }, --   for, do, while, etc.
     -- Label         = { }, --    case, default, etc.
-    Operator = { fg = c.blue5 }, -- "sizeof", "+", "*", etc.
-    Keyword = { fg = c.cyan, style = config.keywordStyle }, --  any other keyword
+    Operator = { fg = c.blue }, -- "sizeof", "+", "*", etc.
+    Keyword = { fg = c.blue, style = config.keywordStyle }, --  any other keyword
     -- Exception     = { }, --  try, catch, throw
 
     PreProc = { fg = c.cyan }, -- (preferred) generic Preprocessor
@@ -154,9 +154,9 @@ function M.setup(config)
     -- These groups are for the native LSP client. Some other LSP clients may
     -- use these groups, or use their own. Consult your LSP client's
     -- documentation.
-    LspReferenceText = { bg = c.fg_gutter }, -- used for highlighting "text" references
-    LspReferenceRead = { bg = c.fg_gutter }, -- used for highlighting "read" references
-    LspReferenceWrite = { bg = c.fg_gutter }, -- used for highlighting "write" references
+    LspReferenceText = { bg = config.transparent and c.none or c.bg }, -- used for highlighting "text" references
+    LspReferenceRead = { bg = config.transparent and c.none or c.bg }, -- used for highlighting "read" references
+    LspReferenceWrite = { bg = config.transparent and c.none or c.bg }, -- used for highlighting "write" references
 
     DiagnosticError = { fg = c.error }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
     DiagnosticWarn = { fg = c.warning }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
@@ -226,20 +226,20 @@ function M.setup(config)
     -- TSFuncBuiltin       = { };    -- For builtin functions: `table.insert` in Lua.
     -- TSFuncMacro         = { };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
     -- TSInclude           = { };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-    TSKeyword = { fg = c.purple, style = config.keywordStyle }, -- For keywords that don't fall in previous categories.
-    TSKeywordFunction = { fg = c.magenta, style = config.functionStyle }, -- For keywords used to define a fuction.
+    TSKeyword = { fg = c.blue, style = config.keywordStyle }, -- For keywords that don't fall in previous categories.
+    TSKeywordFunction = { fg = c.blue, style = config.functionStyle }, -- For keywords used to define a fuction.
     TSLabel = { fg = c.blue }, -- For labels: `label:` in C and `:label:` in Lua.
     -- TSMethod            = { };    -- For method calls and definitions.
     -- TSNamespace         = { };    -- For identifiers referring to modules and namespaces.
     -- TSNone              = { };    -- TODO: docs
     -- TSNumber            = { };    -- For all numbers
-    TSOperator = { fg = c.blue5 }, -- For any operator: `+`, but also `->` and `*` in C.
-    TSParameter = { fg = c.yellow }, -- For parameters of a function.
+    TSOperator = { fg = c.blue }, -- For any operator: `+`, but also `->` and `*` in C.
+    TSParameter = { fg = c.fg }, -- For parameters of a function.
     -- TSParameterReference= { };    -- For references to parameters of a function.
-    TSProperty = { fg = c.green1 }, -- Same as `TSField`.
-    TSPunctDelimiter = { fg = c.blue5 }, -- For delimiters ie: `.`
-    TSPunctBracket = { fg = c.fg_dark }, -- For brackets and parens.
-    TSPunctSpecial = { fg = c.blue5 }, -- For special punctutation that does not fall in the catagories before.
+    TSProperty = { fg = c.keyword }, -- Same as `TSField`.
+    TSPunctDelimiter = { fg = c.yellow }, -- For delimiters ie: `.`
+    TSPunctBracket = { fg = c.fg }, -- For brackets and parens.
+    TSPunctSpecial = { fg = c.fg }, -- For special punctutation that does not fall in the catagories before.
     -- TSRepeat            = { };    -- For keywords related to loops.
     -- TSString            = { };    -- For strings.
     TSStringRegex = { fg = c.blue6 }, -- For regexes.
@@ -248,7 +248,7 @@ function M.setup(config)
     -- TSType              = { };    -- For types.
     -- TSTypeBuiltin       = { };    -- For builtin types.
     TSVariable = { style = config.variableStyle }, -- Any variable name that does not have another highlight.
-    TSVariableBuiltin = { fg = c.red }, -- Variable names that are defined by the languages, like `this` or `self`.
+    TSVariableBuiltin = { fg = c.fg }, -- Variable names that are defined by the languages, like `this` or `self`.
 
     -- TSTag               = { };    -- Tags like html tag names.
     -- TSTagDelimiter      = { };    -- Tag delimiter like `<` `>` `/`
@@ -303,8 +303,8 @@ function M.setup(config)
     GitSignsDelete = { fg = c.gitSigns.delete }, -- diff mode: Deleted line |diff.txt|
 
     -- Telescope
-    TelescopeBorder = { fg = c.border_highlight, bg = c.bg_float },
-    TelescopeNormal = { fg = c.fg, bg = c.bg_float },
+    TelescopeBorder = { fg = c.border_highlight, bg = color.transparent and c.none or c.bg },
+    TelescopeNormal = { fg = c.fg, bg = color.transparent and c.none or c.bg },
 
     -- NvimTree
     NvimTreeNormal = { fg = c.fg_sidebar, bg = c.bg_sidebar },
@@ -343,7 +343,7 @@ function M.setup(config)
     WhichKeyDesc = { fg = c.magenta },
     WhichKeySeperator = { fg = c.comment },
     WhichKeySeparator = { fg = c.comment },
-    WhichKeyFloat = { bg = c.bg_sidebar },
+    WhichKeyFloat = { bg = color.transparent and c.none or c.bg },
     WhichKeyValue = { fg = c.dark5 },
 
     -- LspSaga
