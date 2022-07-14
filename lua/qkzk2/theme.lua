@@ -66,7 +66,7 @@ function M.setup(config)
     SpellRare = { sp = c.hint, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
     StatusLine = { fg = c.fg_sidebar, bg = config.transparent and c.none or c.bg }, -- status line of current window
     StatusLineNC = { fg = c.fg_gutter, bg = config.transparent and c.none or c.bg }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-    TabLine = { bg = config.transparent and c.none or c.bg, fg = c.fg_gutter }, -- tab pages line, not active tab page label
+    TabLine = { bg = config.transparent and c.none or c.bg, fg = c.dark5 }, -- tab pages line, not active tab page label
     TabLineFill = { bg = config.transparent and c.none or c.bg }, -- tab pages line, where there are no labels
     TabLineSel = { fg = config.transparent and c.none or c.bg, bg = c.blue }, -- tab pages line, active tab page label
     Title = { fg = c.blue, style = "bold" }, -- titles for output from ":set all", ":autocmd" etc.
