@@ -1,11 +1,11 @@
-local util = require("tokyonight.util")
+local util = require("qkzk2.util")
 
 local M = {}
 
 ---@param config Config
 ---@return ColorScheme
 function M.setup(config)
-  config = config or require("tokyonight.config")
+  config = config or require("qkzk2.config")
 
   -- Color Palette
   ---@class ColorScheme
@@ -97,3 +97,4 @@ function M.setup(config)
 end
 
 return M
+
