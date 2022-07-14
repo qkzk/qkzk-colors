@@ -52,7 +52,7 @@ function M.setup(config)
     NormalFloat = { fg = c.fg, bg = c.bg_float }, -- Normal text in floating windows.
     FloatBorder = { fg = c.border_highlight, bg = config.transparent and c.none or c.bg },
     Pmenu = { bg = c.bg_popup, fg = c.fg }, -- Popup menu: normal item.
-    PmenuSel = { bg = util.darken(c.fg_gutter, 0.8) }, -- Popup menu: selected item.
+    PmenuSel = { bg = c.bg_popup, fg = c.blue, style = "reverse" }, -- Popup menu: selected item.
     PmenuSbar = { bg = util.lighten(c.bg_popup, 0.95) }, -- Popup menu: scrollbar.
     PmenuThumb = { bg = c.fg_gutter }, -- Popup menu: Thumb of the scrollbar.
     -- Pmenu = { bg = config.transparent and c.none or c.bg, fg = c.fg }, -- Popup menu: normal item.
