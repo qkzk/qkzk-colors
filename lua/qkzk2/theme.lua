@@ -376,7 +376,7 @@ function M.setup(config)
 
     -- BufferLine
     BufferLineIndicatorSelected = { fg = c.git.change },
-    BufferLineFill = { bg = c.black },
+    BufferLineFill = { bg = config.transparent and c.none or c.bg },
 
     -- Barbar
     BufferCurrent = { bg = c.fg_gutter, fg = c.fg },
