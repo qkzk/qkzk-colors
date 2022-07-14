@@ -303,8 +303,8 @@ function M.setup(config)
     GitSignsDelete = { fg = c.gitSigns.delete }, -- diff mode: Deleted line |diff.txt|
 
     -- Telescope
-    TelescopeBorder = { fg = c.border_highlight, bg = color.transparent and c.none or c.bg },
-    TelescopeNormal = { fg = c.fg, bg = color.transparent and c.none or c.bg },
+    TelescopeBorder = { fg = c.border_highlight, bg = config.transparent and c.none or c.bg },
+    TelescopeNormal = { fg = c.fg, bg = config.transparent and c.none or c.bg },
 
     -- NvimTree
     NvimTreeNormal = { fg = c.fg_sidebar, bg = c.bg_sidebar },
@@ -343,7 +343,7 @@ function M.setup(config)
     WhichKeyDesc = { fg = c.magenta },
     WhichKeySeperator = { fg = c.comment },
     WhichKeySeparator = { fg = c.comment },
-    WhichKeyFloat = { bg = color.transparent and c.none or c.bg },
+    WhichKeyFloat = { bg = config.transparent and c.none or c.bg },
     WhichKeyValue = { fg = c.dark5 },
 
     -- LspSaga
