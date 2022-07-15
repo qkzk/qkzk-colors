@@ -219,7 +219,7 @@ function M.setup(config)
     -- TSComment           = { };    -- For comment blocks.
     TSNote = { fg = c.cyan, bg = config.transparent and c.none or c.bg }, -- NOTE: aze
     TSWarning = { fg = c.orange, bg = config.transparent and c.none or c.bg }, -- WARN: aze
-    TSDanger = { fg = c.red, bg = bg = config.transparent and c.none or c.bg }, --XXX: aze
+    TSDanger = { fg = c.red, bg = config.transparent and c.none or c.bg },
     TSConstructor = { fg = c.magenta }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
     -- TSConditional       = { };    -- For keywords related to conditionnals.
     -- TSConstant          = { };    -- For constants
