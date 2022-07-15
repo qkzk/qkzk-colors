@@ -180,7 +180,7 @@ function M.setup(config)
     DiagnosticUnderlineInfo = { style = "undercurl", sp = c.info }, -- Used to underline "Information" diagnostics
     DiagnosticUnderlineHint = { style = "undercurl", sp = c.hint }, -- Used to underline "Hint" diagnostics
 
-    LspSignatureActiveParameter = { fg = c.orange },
+    LspSignatureActiveParameter = { fg = c.orange, bg = config.transparent and c.none or c.bg },
     LspCodeLens = { fg = c.comment },
 
     ALEErrorSign = { fg = c.error },
