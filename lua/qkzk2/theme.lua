@@ -131,6 +131,9 @@ function M.setup(config)
 
     Error = { fg = c.error }, -- (preferred) any erroneous construct
     -- Todo = { bg = config.transparent and c.none or c.bg, fg = c.bg }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+    -- TODO: aze
+    -- FIXME: aze
+    -- BUG: aze
 
     qfLineNr = { fg = c.dark5 },
     qfFileName = { fg = c.blue },
@@ -214,9 +217,9 @@ function M.setup(config)
     -- TSBoolean           = { };    -- For booleans.
     -- TSCharacter         = { };    -- For characters.
     -- TSComment           = { };    -- For comment blocks.
-    TSNote = { fg = c.bg, bg = c.info },
-    TSWarning = { fg = c.bg, bg = c.warning },
-    TSDanger = { fg = c.bg, bg = c.error },
+    TSNote = { fg = c.cyan, bg = config.transparent and c.none or c.bg }, -- NOTE: aze
+    TSWarning = { fg = c.orange, bg = config.transparent and c.none or c.bg }, -- WARN: aze
+    TSDanger = { fg = c.red, bg = bg = config.transparent and c.none or c.bg }, --XXX: aze
     TSConstructor = { fg = c.magenta }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
     -- TSConditional       = { };    -- For keywords related to conditionnals.
     -- TSConstant          = { };    -- For constants
