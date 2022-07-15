@@ -51,7 +51,7 @@ function M.setup(config)
     NormalSB = { fg = c.fg_sidebar, bg = c.bg_sidebar }, -- normal text in non-current windows
     NormalFloat = { fg = c.fg, bg = c.bg_float }, -- Normal text in floating windows.
     FloatBorder = { fg = c.border_highlight, bg = config.transparent and c.none or c.bg },
-    Pmenu = { bg = c.config.transparent and c.none or c.bg_popup, fg = c.fg }, -- Popup menu: normal item.
+    Pmenu = { bg = config.transparent and c.none or c.bg_popup, fg = c.fg }, -- Popup menu: normal item.
     PmenuSel = { bg = c.bg_popup, fg = c.blue, style = "reverse" }, -- Popup menu: selected item.
     PmenuSbar = { bg = util.lighten(c.bg_popup, 0.95) }, -- Popup menu: scrollbar.
     PmenuThumb = { bg = c.fg_gutter }, -- Popup menu: Thumb of the scrollbar.
